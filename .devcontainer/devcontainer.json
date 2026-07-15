@@ -1,0 +1,14 @@
+{
+  "name": "Clarixa Node Task",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
+  },
+  "postCreateCommand": "npm install || true",
+  "postAttachCommand": "code CLARIXA_TASK.md"
+}
