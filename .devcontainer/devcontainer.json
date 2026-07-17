@@ -8,7 +8,7 @@
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "clarixa-ai.clarixa"
+        "./clarixa-0.1.0.vsix"
       ],
       "settings": {
         "editor.formatOnSave": true
