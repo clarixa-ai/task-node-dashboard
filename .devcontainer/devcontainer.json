@@ -1,14 +1,19 @@
 {
-  "name": "Clarixa Node Task",
+  "name": "Clarixa – Node Task",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "hostRequirements": {
     "cpus": 2
   },
   "customizations": {
     "vscode": {
-      "extensions": []
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "clarixa-ai.clarixa"
+      ],
+      "settings": {
+        "editor.formatOnSave": true
+      }
     }
   },
-  "postCreateCommand": "npm install || true",
-  "postAttachCommand": "code CLARIXA_TASK.md"
+  "postCreateCommand": "npm install 2>/dev/null || true; curl -sf \"https://api.clarixa.org/api/extension/claim-launch?githubUser=${GITHUB_USER}\" -o CLARIXA_TASK.json 2>/dev/null && echo 'Clarixa task loaded.' || echo 'No pending Clarixa task — use Setup Task command in VS Code.'"
 }
